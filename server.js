@@ -1,12 +1,9 @@
-// File: server.js
-// eslint-disable-next-line no-undef
-const express = require('express');
-// eslint-disable-next-line no-undef
-const cors = require('cors');
-// eslint-disable-next-line no-undef
-const emailRoutes = require('./routes/emailRoutes');
+import express from 'express';
+import cors from 'cors';
+import emailRoutes from './routes/emailRoutes.js'; // Ensure the file extension is included
 
 const app = express();
+
 app.use(express.json());
 app.use(
   cors({
