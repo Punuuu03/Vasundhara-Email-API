@@ -1,9 +1,7 @@
-// File: controllers/emailController.js
-// eslint-disable-next-line no-undef
-const transporter = require('../utils/nodemailerTransport');
+import transporter from '../utils/nodemailerTransport.js';
 
 // Controller: Send verification email
-const sendVerificationEmail = async (req, res) => {
+export const sendVerificationEmail = async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
@@ -26,7 +24,7 @@ const sendVerificationEmail = async (req, res) => {
 };
 
 // Controller: Send volunteer form details
-const sendVolunteerForm = async (req, res) => {
+export const sendVolunteerForm = async (req, res) => {
   const { name, email, contact, message } = req.body;
 
   try {
@@ -47,10 +45,4 @@ const sendVolunteerForm = async (req, res) => {
     console.error('Error sending volunteer submission email:', error);
     res.status(500).send('Failed to send volunteer submission email.');
   }
-};
-
-// eslint-disable-next-line no-undef
-module.exports = {
-  sendVerificationEmail,
-  sendVolunteerForm,
 };
