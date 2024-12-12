@@ -1,11 +1,5 @@
-// File: routes/emailRoutes.js
-// eslint-disable-next-line no-undef
-const express = require('express');
-const {
-  sendVerificationEmail,
-  sendVolunteerForm,
-// eslint-disable-next-line no-undef
-} = require('../controllers/emailController');
+import express from 'express';
+import { sendVerificationEmail, sendVolunteerForm } from '../controllers/emailController.js';
 
 const router = express.Router();
 
@@ -13,5 +7,4 @@ const router = express.Router();
 router.post('/send-verification', sendVerificationEmail);
 router.post('/send-volunteer', sendVolunteerForm);
 
-// eslint-disable-next-line no-undef
-module.exports = router;
+export default router;
