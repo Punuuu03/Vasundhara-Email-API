@@ -1,6 +1,4 @@
-// File: utils/nodemailerTransport.js
-// eslint-disable-next-line no-undef
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 // Configure nodemailer transport
 const transporter = nodemailer.createTransport({
@@ -22,5 +20,4 @@ transporter.verify((error, success) => {
   }
 });
 
-// eslint-disable-next-line no-undef
-module.exports = transporter;
+export default transporter;
